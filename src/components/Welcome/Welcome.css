@@ -1,0 +1,117 @@
+.welcome {
+  background-color: rgba(0, 47, 61, 0.77);
+}
+.welcome__title {
+  max-width: 660px;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  font-size: 64px;
+  font-weight: bold;
+  text-align: center;
+}
+.welcome__description {
+  max-width: 834px;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  font-size: 25px;
+  font-weight: normal;
+  text-align: center;
+}
+.welcome__wrapper {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1280px;
+  min-height: 568px;
+  margin: 0 auto;
+  background: url("/public/images/welcome-baclg.png");
+}
+.welcome__wrapper-button {
+  display: flex;
+  max-width: 565px;
+  width: 100%;
+  justify-content: space-between;
+}
+.welcome__button:nth-child(1) {
+  width: 175px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  background-color: #9bcc37;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.1s linear;
+}
+.welcome__button:nth-child(1):hover {
+  cursor: pointer;
+  background-color: #77ba04;
+}
+.welcome__button:nth-child(2) {
+  width: 327px;
+  height: 50px;
+  border: 2px solid #9bcc37;
+  border-radius: 5px;
+  background-color: white;
+  font-family: "Open Sans", sans-serif;
+  color: #9bcc37;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.1s linear;
+}
+.welcome__button:nth-child(2):hover {
+  cursor: pointer;
+  color: #77ba04;
+  border-color: #77ba04;
+}
+.welcome__link {
+	display: flex;
+	justify-content: center;
+	padding-top: 7px;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  color: #9bcc37;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.1s linear;
+}
+.welcome__link:hover {
+  cursor: pointer;
+  color: #77ba04;
+  border-color: #77ba04;
+}
+
+@media (max-width: 600px) {
+  .welcome__title {
+    font-size: 36px;
+  }
+  .welcome__description {
+    font-size: 20px;
+  }
+  .welcome__wrapper-button {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .welcome__button:nth-child(1) {
+    width: 295px;
+  }
+  .welcome__button:nth-child(2) {
+    width: 295px;
+  }
+}
+@media (max-width: 600px) {
+  .welcome__wrapper {
+    min-height: 388px;
+  }
+  .welcome__title {
+    font-size: 24px;
+  }
+  .welcome__description {
+    font-size: 16px;
+  }
+}/*# sourceMappingURL=Welcome.css.map */

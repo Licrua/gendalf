@@ -1,0 +1,215 @@
+@use '../../utils/mixin.scss' as mixin;
+
+.header {
+  background-color: #00b7ec;
+
+  &__wrapper {
+    max-width: 1280px;
+    min-height: 106px;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__search,
+  &__profile,
+  &__search,
+  &__cart {
+    display: none;
+  }
+
+  &__button {
+    width: 255px;
+    height: 40px;
+    border-radius: 5px;
+
+    @include mixin.fontOpenSans($color: #00b7ec, $fz: 18px, $fw: normal);
+
+    background-color: white;
+    border: 1px solid #00b7ec;
+
+    transition: all 0.1s linear;
+
+    &:hover {
+      cursor: pointer;
+      border-color: #1998d5;
+      color: #1998d5;
+    }
+  }
+
+  &__link {
+    @include mixin.fontOpenSans($color: #00b7ec, $fz: 18px, $fw: normal);
+    text-decoration: none;
+
+    transition: all 0.1s linear;
+
+    &:hover {
+      cursor: pointer;
+      border-color: #1998d5;
+      color: #1998d5;
+    }
+  }
+
+  &__burger {
+    display: none;
+  }
+
+  &__burger-checkbox {
+    display: none;
+  }
+}
+
+.list {
+  display: flex;
+  gap: 39px;
+  list-style-type: none;
+
+  &__link {
+    @include mixin.fontOpenSans($fz: 18px, $fw: normal);
+    text-decoration: none;
+    transition: all 0.1s linear;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 1210px) {
+  .header {
+    background-color: white;
+    &__wrapper {
+      justify-content: space-around;
+    }
+    &__search {
+      width: 30px;
+      height: 30px;
+      display: block;
+      background-image: url('images/search.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      border: none;
+      background-color: white;
+
+      transition: all 0.1s linear;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+
+    &__cart {
+      width: 30px;
+      height: 30px;
+      display: block;
+      background-image: url('images/cart.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      border: none;
+      background-color: white;
+
+      transition: all 0.1s linear;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+
+    &__profile {
+      width: 30px;
+      height: 30px;
+      display: block;
+      background-image: url('images/profile.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      border: none;
+      background-color: white;
+
+      transition: all 0.1s linear;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+
+    &__button {
+      display: none;
+    }
+
+    &__burger-checkbox {
+      display: block;
+      position: absolute;
+      visibility: hidden;
+    }
+
+    &__burger {
+      cursor: pointer;
+      display: block;
+      position: relative;
+      border: none;
+      background: transparent;
+      width: 40px;
+      height: 26px;
+      z-index: 10;
+
+      &::before,
+      &::after {
+        content: '';
+        left: 0;
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 4px;
+        border-radius: 10px;
+        background: #00b7ec;
+      }
+
+      &::before {
+        top: 0;
+        box-shadow: 0 11px 0 #00b7ec;
+        transition: box-shadow 0.3s 0.15s, top 0.3s 0.15s, transform 0.3s;
+      }
+      &::after {
+        bottom: 0;
+        transition: bottom 0.3s 0.15s, transform 0.3s;
+      }
+    }
+  }
+
+  .header__burger-checkbox:checked + .header__burger::before {
+    top: 11px;
+    transform: rotate(45deg);
+    box-shadow: 0 0 0 #00b7ec;
+    transition: box-shadow 0.15s, top 0.3s, transform 0.3s 0.15s;
+  }
+
+  .header__burger-checkbox:checked + .header__burger::after {
+    bottom: 11px;
+    transform: rotate(-45deg);
+    transition: bottom 0.3s, transform 0.3s 0.15s;
+  }
+
+  .list {
+    top: 0;
+    right: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #1998d5;
+    transform: translateX(-100%);
+    transition: 0.3s;
+    width: 100%;
+    height: 100%;
+  }
+
+  .header__burger-checkbox:checked ~ .list {
+    transform: translateX(0);
+  }
+}

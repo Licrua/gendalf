@@ -1,0 +1,1 @@
+export const HeaderSearch = () => <input type="search" className="header__search" />;

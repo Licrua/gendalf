@@ -1,0 +1,86 @@
+@use '../../utils/mixin.scss' as mixin;
+
+.base {
+  &__wrapper {
+    max-width: 1280px;
+    min-height: 495px;
+    margin: 0 auto;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 43px;
+  }
+
+  &__title {
+    @include mixin.fontOpenSans($color: #00b7ec, $fz: 36px, $fw: lighter);
+    text-align: center;
+  }
+
+  &__wrapper-second {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1124px;
+    width: 100%;
+  }
+
+  &__iframe {
+    width: 538px;
+    height: 297px;
+  }
+
+  &__text {
+    max-width: 494px;
+    @include mixin.fontOpenSans($color: #666666, $fz: 18px, $fw: normal);
+  }
+}
+
+@media (max-width: 1024px) {
+  .base {
+    background: linear-gradient(
+      163.35deg,
+      rgba(40, 228, 115, 0.496) 11.27%,
+      rgba(70, 205, 22, 0.296) 36.19%,
+      rgba(39, 221, 209, 0.8) 53.68%,
+      rgba(5, 176, 213, 0.8) 82.7%
+    );
+  }
+  .base__wrapper-second {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .base__iframe {
+    width: 355px;
+    height: 195px;
+  }
+
+  .base__wrapper {
+    gap: 25px;
+  }
+
+  .base__title {
+    @include mixin.fontOpenSans($color: #00b7ec, $fz: 28px, $fw: normal);
+  }
+}
+
+@media (max-width: 375px) {
+  .base__iframe {
+    width: 305px;
+    height: 165px;
+  }
+
+  .base__text {
+    @include mixin.fontOpenSans($color: #666666, $fz: 16px, $fw: normal);
+  }
+
+  .base__wrapper {
+    gap: 10px;
+  }
+}

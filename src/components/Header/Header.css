@@ -1,0 +1,233 @@
+.header {
+  background-color: #00b7ec;
+}
+.header__wrapper {
+  max-width: 1280px;
+  min-height: 106px;
+  margin: 0 auto;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__search,
+.header__profile,
+.header__search,
+.header__cart {
+  display: none;
+}
+.header__button {
+  display: flex;
+  width: 255px;
+  height: 40px;
+  border-radius: 5px;
+  font-family: 'Open Sans', sans-serif;
+  color: #00b7ec;
+  font-size: 18px;
+  font-weight: normal;
+  justify-content: center;
+  padding-top: 5px;
+  text-align: center;
+  background-color: white;
+  border: 1px solid #00b7ec;
+  transition: all 0.1s linear;
+}
+.header__button:hover {
+  cursor: pointer;
+  border-color: #1998d5;
+  color: #1998d5;
+}
+.header__link {
+  font-family: 'Open Sans', sans-serif;
+  color: #00b7ec;
+  font-size: 18px;
+  font-weight: normal;
+  text-decoration: none;
+  transition: all 0.1s linear;
+}
+.header__link:hover {
+  cursor: pointer;
+  border-color: #1998d5;
+  color: #1998d5;
+}
+.header__burger {
+  display: none;
+}
+.header__burger-checkbox {
+  display: none;
+}
+
+.header__logo {
+  display: block;
+}
+
+.header__logo--mobile {
+  display: none; /* По умолчанию скрыто */
+}
+
+.header__logo--desktop {
+  display: block; /* По умолчанию видно для больших экранов */
+}
+
+.list {
+  display: flex;
+  gap: 39px;
+  list-style-type: none;
+}
+.list__link {
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  font-size: 18px;
+  font-weight: normal;
+  text-decoration: none;
+  transition: all 0.1s linear;
+}
+.list__link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1210px) {
+  .header {
+    background-color: white;
+  }
+  .header__buttons {
+    gap: 30px;
+    display: flex;
+    flex-direction: row;
+  }
+  .header__wrapper {
+    justify-content: space-around;
+  }
+  .header__search {
+    width: 30px;
+    height: 30px;
+    display: block;
+    background-image: url('/public/images/search.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: white;
+    transition: all 0.1s linear;
+  }
+  .header__search:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  .header__cart {
+    width: 30px;
+    height: 30px;
+    display: block;
+    background-image: url('/public/images/cart.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: white;
+    transition: all 0.1s linear;
+  }
+  .header__cart:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  .header__profile {
+    width: 30px;
+    height: 30px;
+    display: block;
+    background-image: url('/public/images/profile.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: white;
+    transition: all 0.1s linear;
+  }
+  .header__profile:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  .header__button {
+    display: none;
+  }
+  .header__burger-checkbox {
+    display: block;
+    position: absolute;
+    visibility: hidden;
+  }
+  .header__burger {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    border: none;
+    background: transparent;
+    width: 40px;
+    height: 26px;
+    z-index: 10;
+  }
+  .header__burger::before,
+  .header__burger::after {
+    content: '';
+    left: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 10px;
+    background: #00b7ec;
+  }
+  .header__burger::before {
+    top: 0;
+    box-shadow: 0 11px 0 #00b7ec;
+    transition:
+      box-shadow 0.3s 0.15s,
+      top 0.3s 0.15s,
+      transform 0.3s;
+  }
+  .header__burger::after {
+    bottom: 0;
+    transition:
+      bottom 0.3s 0.15s,
+      transform 0.3s;
+  }
+  .header__burger-checkbox:checked + .header__burger::before {
+    top: 11px;
+    transform: rotate(45deg);
+    box-shadow: 0 0 0 #00b7ec;
+    transition:
+      box-shadow 0.15s,
+      top 0.3s,
+      transform 0.3s 0.15s;
+  }
+  .header__burger-checkbox:checked + .header__burger::after {
+    bottom: 11px;
+    transform: rotate(-45deg);
+    transition:
+      bottom 0.3s,
+      transform 0.3s 0.15s;
+  }
+  .list {
+    top: 0;
+    right: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #1998d5;
+    transform: translateX(-100%);
+    transition: 0.3s;
+    width: 100%;
+    height: 100%;
+  }
+  .header__burger-checkbox:checked ~ .list {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 376px) {
+  .header__logo--mobile {
+    display: block; /* Показываем мобильное изображение */
+  }
+
+  .header__logo--desktop {
+    display: none; /* Скрываем десктопное изображение */
+  }
+}
+/*# sourceMappingURL=Header.css.map */

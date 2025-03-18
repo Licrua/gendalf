@@ -1,0 +1,145 @@
+@use '../../utils/mixin.scss' as mixin;
+
+.description {
+  background-color: white;
+  &__wrapper {
+    max-width: 1280px;
+    min-height: 520px;
+    margin: 0 auto;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+
+    background: url('/images/desc__logo.svg') no-repeat center right;
+  }
+
+  &__title {
+    @include mixin.fontOpenSans($color: #00b7ec, $fz: 36px, $fw: lighter);
+  }
+
+  &__text {
+    @include mixin.fontOpenSans($color: #666666, $fz: 18px, $fw: normal);
+    max-width: 728px;
+  }
+
+  &__wrapper-btn {
+    max-width: 566px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__button {
+    &:nth-child(1) {
+      width: 225px;
+      height: 50px;
+      border-radius: 5px;
+      border: none;
+      background-color: #00b7ec;
+
+      @include mixin.fontOpenSans($fz: 18px, $fw: bold);
+
+      transition: all 0.1s linear;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #1998d5;
+      }
+    }
+
+    &:nth-child(2) {
+      width: 320px;
+      height: 50px;
+      border-radius: 5px;
+      border: 2px solid #00b7ec;
+      background-color: white;
+
+      @include mixin.fontOpenSans($color: #00b7ec, $fz: 18px, $fw: bold);
+
+      transition: all 0.1s linear;
+
+      &:hover {
+        cursor: pointer;
+        border-color: #1998d5;
+        color: #1998d5;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    @include mixin.fontOpenSans($color: #00b7ec, $fz: 18px, $fw: bold);
+
+    transition: all 0.1s linear;
+
+    &:hover {
+      cursor: pointer;
+      border-color: #1998d5;
+      color: #1998d5;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .description {
+    &__wrapper {
+      background-image: none;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .description {
+    &__wrapper-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    &__wrapper {
+      min-height: 673px;
+    }
+
+    &__button {
+      &:nth-child(1) {
+        width: 295px;
+      }
+      &:nth-child(2) {
+        width: 295px;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .description {
+    &__title {
+      font-size: 28px;
+      max-width: 300px;
+    }
+
+    &__text {
+      font-size: 16px;
+      text-align: left;
+    }
+
+    &__wrapper {
+      gap: 15px;
+    }
+
+    &__button {
+      &:nth-child(1) {
+        width: 295px;
+      }
+      &:nth-child(2) {
+        width: 295px;
+      }
+    }
+  }
+}

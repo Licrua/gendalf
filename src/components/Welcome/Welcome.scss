@@ -1,0 +1,131 @@
+@use '../../utils/mixin.scss' as mixin;
+
+.welcome {
+  background-color: rgba($color: #002f3d, $alpha: 0.77);
+
+  &__title {
+    max-width: 660px;
+    @include mixin.fontOpenSans($fz: 64px, $fw: bold);
+    text-align: center;
+  }
+
+  &__description {
+    max-width: 834px;
+
+    @include mixin.fontOpenSans($fz: 25px);
+    text-align: center;
+  }
+
+  &__wrapper {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+
+    max-width: 1280px;
+    min-height: 568px;
+    margin: 0 auto;
+    background: url('/images/welcome-baclg.png');
+  }
+
+  &__wrapper-button {
+    display: flex;
+    max-width: 565px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &__button {
+    &:nth-child(1) {
+      width: 175px;
+      height: 50px;
+      border-radius: 5px;
+      border: none;
+      background-color: #9bcc37;
+
+      @include mixin.fontOpenSans($fz: 18px, $fw: bold);
+
+      transition: all 0.1s linear;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #77ba04;
+      }
+    }
+    &:nth-child(2) {
+      width: 327px;
+      height: 50px;
+
+      border: 2px solid #9bcc37;
+      border-radius: 5px;
+
+      background-color: white;
+
+      @include mixin.fontOpenSans($color: #9bcc37, $fz: 18px, $fw: bold);
+
+      transition: all 0.1s linear;
+
+      &:hover {
+        cursor: pointer;
+        color: #77ba04;
+        border-color: #77ba04;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    @include mixin.fontOpenSans($color: #9bcc37, $fz: 18px, $fw: bold);
+
+    transition: all 0.1s linear;
+
+    &:hover {
+      cursor: pointer;
+      color: #77ba04;
+      border-color: #77ba04;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .welcome {
+    &__title {
+      font-size: 36px;
+    }
+
+    &__description {
+      font-size: 20px;
+    }
+
+    &__wrapper-button {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    &__button:nth-child(1) {
+      width: 295px;
+    }
+    &__button:nth-child(2) {
+      width: 295px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .welcome {
+    &__wrapper {
+      min-height: 388px;
+    }
+
+    &__title {
+      font-size: 24px;
+    }
+
+    &__description {
+      font-size: 16px;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+
+
+  * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  }
+  
+  /* Улучшает рендеринг текста */
+  html {
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Убирает outline у кнопок и инпутов при фокусе (но лучше оставить для доступности) */
+  button,
+  input,
+  textarea {
+	outline: none;
+	font: inherit;
+  }
+  
+  /* Улучшает работу изображений */
+  img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+  }
+  
+  /* Убирает стандартные маркеры у списков */
+  ul,
+  ol {
+	list-style: none;
+  }
+  
+  /* Дефолтные стили для ссылок */
+  a {
+	text-decoration: none;
+	color: inherit;
+  }
+  
+  /* Убирает стили у кнопок */
+  button {
+	background: none;
+	border: none;
+	cursor: pointer;
+  }
+  
+  /* Убирает выделение текста (если надо) */
+  body {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+  }
+  
+  /* Задает более предсказуемую высоту 100vh в мобильных браузерах */
+  :root {
+	--vh: 1vh;
+  }
+  
+  body {
+	min-height: calc(var(--vh, 1vh) * 100);
+  }
+  

@@ -1,0 +1,103 @@
+@use '../../utils/mixin.scss' as mixin;
+
+.answer {
+  background: linear-gradient(
+    163.35deg,
+    rgba(40, 228, 115, 0.16) 11.27%,
+    rgba(70, 205, 22, 0.14) 35.82%,
+    rgba(39, 221, 209, 0.39) 57.4%,
+    rgba(5, 176, 213, 0.32) 82.7%
+  );
+  backdrop-filter: blur(3.5px);
+
+  &__wrapper {
+    max-width: 1280px;
+    min-height: 810px;
+    margin: 0 auto;
+    padding: 10px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background: url('/public/images/answer.png') no-repeat top 38px right 29px;
+  }
+
+  
+  &__item-recommendation {
+	list-style: disc;
+  }
+
+  &__title {
+    @include mixin.fontOpenSans($color: #14afe8, $fz: 26px, $fw: bold);
+    margin-bottom: 36px;
+  }
+
+  &__text {
+    max-width: 800px;
+    @include mixin.fontOpenSans($color: #666666, $fz: 18px, $fw: normal);
+  }
+
+  &__list-question {
+    list-style-image: url('/images/answer__icon.png');
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  &__list-recommendation {
+    list-style-image: none;
+    list-style-type: circle;
+    padding-left: 30px;
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__item-recommendation {
+    @include mixin.fontOpenSans($color: #666666, $fz: 18px, $fw: normal);
+  }
+
+  &__span {
+    @include mixin.fontOpenSans($color: #666666, $fz: 18px, $fw: bold);
+  }
+
+  &__item-question {
+    @include mixin.fontOpenSans($color: #666666, $fz: 18px, $fw: normal);
+    text-decoration: underline;
+
+    transition: all 0.1s linear;
+
+    &_active {
+      color: #00b7ec;
+    }
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .answer {
+    &__wrapper {
+      background: none;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .answer {
+    &__wrapper {
+      min-height: 415px;
+    }
+    &__text {
+      display: none;
+    }
+
+    &__list-recommendation {
+      display: none;
+    }
+  }
+}

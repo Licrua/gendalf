@@ -1,0 +1,96 @@
+.tape {
+  background-color: #e9e9e9;
+}
+.tape__wrapper {
+  max-width: 1280px;
+  min-height: 566px;
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  justify-content: center;
+  align-items: center;
+}
+.tape__title {
+  align-self: flex-start;
+  font-family: "Open Sans", sans-serif;
+  color: #00b7ec;
+  font-size: 36px;
+  font-weight: lighter;
+}
+.tape__wrapper-second {
+  display: flex;
+  width: 100%;
+}
+.tape__button {
+  width: 22px;
+  color: #666666;
+  background: none;
+  border: none;
+  transition: all 0.1s linear;
+}
+.tape__button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.tape__wrapper-cards {
+  width: 100%;
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+}
+.tape__card {
+  width: 273px;
+  height: 412px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(rgba(255, 255, 255, 0.16) 55.33%, rgba(7, 168, 219, 0.16) 98.64%);
+  box-shadow: 0px 2px 6px rgba(102, 102, 102, 0.7);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  border-radius: 5px;
+}
+.tape__img {
+  width: 273px;
+  height: 156px;
+  translate: 0 -5px;
+}
+.tape__title-card {
+  width: 224px;
+  margin: 0 auto;
+  font-family: "Open Sans", sans-serif;
+  color: #666666;
+  font-size: 18px;
+  font-weight: normal;
+}
+.tape__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 224px;
+  height: 40px;
+  margin: 0 auto 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 2px solid #00b7ec;
+  font-family: "Open Sans", sans-serif;
+  color: #00b7ec;
+  font-size: 18px;
+  font-weight: normal;
+  transition: all 0.1s linear;
+}
+.tape__link:hover {
+  border-color: #1998d5;
+  color: #1998d5;
+}
+
+@media (max-width: 350px) {
+  .tape__card {
+    width: 255px;
+  }
+  .tape__img {
+    width: 255px;
+  }
+}/*# sourceMappingURL=Tape.css.map */

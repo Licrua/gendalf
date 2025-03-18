@@ -1,0 +1,6 @@
+@mixin fontOpenSans($color: white, $fz, $fw: normal) {
+  font-family: 'Open Sans', sans-serif;
+  color: $color;
+  font-size: $fz;
+  font-weight: $fw;
+}

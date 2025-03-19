@@ -15,15 +15,7 @@ function App() {
   return (
     <Container>
       <Header />
-      <Main>
-        <Welcome />
-        <Description />
-        <Value />
-        <Base />
-        <Tape />
-        <Application />
-        <Answer />
-      </Main>
+      <Main />
       <Footer />
     </Container>
   );

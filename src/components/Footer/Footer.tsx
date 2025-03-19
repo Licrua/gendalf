@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react';
 import './Footer.css';
-import invalid from '/images/cart.svg';
 
 const Footer = () => {
   const [selectedJobType, setSelectedJobType] = useState('office');
@@ -35,7 +34,6 @@ const Footer = () => {
     const { name, value } = event.target;
 
     setTouched((prev) => ({ ...prev, [name]: true }));
-
     setErrors((prev) => ({ ...prev, [name]: !validateField(name, value) }));
   };
 
@@ -45,6 +43,20 @@ const Footer = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    const hasErrors = Object.values(errors).some((error) => error);
+
+    if (hasErrors) {
+      setTouched({
+        name: true,
+        phone: true,
+        email: true,
+        position: true,
+      });
+      alert('Пожалуйста, исправьте ошибки перед отправкой формы.');
+      return;
+    }
+
     console.log('Форма отправлена!', { selectedJobType });
     alert('Форма успешно отправлена!');
     formRef.current?.reset();

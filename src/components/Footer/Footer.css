@@ -134,7 +134,6 @@
   background-color: #77ba04;
 }
 
-
 .input-wrapper {
   position: relative;
   display: flex;
@@ -151,11 +150,11 @@
 }
 
 .footer__input.valid {
-  border-color: green;
+  border-color: #9bcc37;
 }
 
 .footer__input.invalid {
-  border-color: red;
+  border-color: #fd7583;
 }
 
 .error-icon,
@@ -169,17 +168,15 @@
 
 .error-icon {
   color: white;
-  border: 1px solid red;
   padding: 5px;
-  background: red;
+  background: #fd7583;
   border-radius: 50%;
 }
 
 .valid-icon {
   color: white;
-  border: 1px solid green;
   padding: 6px;
-  background: green;
+  background: #9bcc37;
   border-radius: 50%;
 }
 

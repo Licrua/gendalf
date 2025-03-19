@@ -1,12 +1,12 @@
 import { useRef, useState } from 'react';
 import './Footer.css';
+import invalid from '/images/cart.svg';
 
 const Footer = () => {
   const [selectedJobType, setSelectedJobType] = useState('office');
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const formRef = useRef<HTMLFormElement | null>(null);
 
-  // Состояния для ошибок и касания полей
   const [errors, setErrors] = useState({
     name: false,
     phone: false,
@@ -88,7 +88,9 @@ const Footer = () => {
                   />
                   {touched[field as keyof typeof touched] &&
                     (errors[field as keyof typeof errors] ? (
-                      <span className="error-icon">✖</span>
+                      <span className="error-icon">
+                        <img style={{ padding: '3px' }} src="/images/invalid.svg" alt="invalid" />
+                      </span>
                     ) : (
                       <span className="valid-icon">✔</span>
                     ))}
